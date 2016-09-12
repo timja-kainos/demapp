@@ -1,0 +1,13 @@
+@import "gov/design-patterns/alpha-beta";
+
+.phase-banner  {
+  @include phase-banner(beta);
+  margin: auto;
+}
+
+#mapid {
+  height: 500px;
+  width: 960px;
+  margin: auto;
+
+}
