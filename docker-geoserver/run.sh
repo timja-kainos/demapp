@@ -10,7 +10,7 @@ then
     mkdir -p $DATA_DIR
 fi 
 
-docker run --name="geoserver-postgis" -t -d timja/postgis
+docker run --name="geoserver-postgis" -p 5432:5432 -t -d timja/postgis
 
 docker run \
 	--name=geoserver \
