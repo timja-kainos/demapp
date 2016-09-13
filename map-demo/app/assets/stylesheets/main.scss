@@ -1,4 +1,25 @@
-@import "gov/design-patterns/alpha-beta";
+@import "../govuk_frontend_toolkit/design-patterns/alpha-beta";
+@import "../govuk_frontend_toolkit/design-patterns/breadcrumbs";
+@import "../govuk_frontend_toolkit/design-patterns/buttons";
+@import "../govuk_frontend_toolkit/design-patterns/media-player";
+
+@import '../govuk_elements/reset';
+
+@import '../govuk_elements/breadcrumbs';
+@import '../govuk_elements/buttons';
+@import '../govuk_elements/components';
+@import '../govuk_elements/details';
+@import '../govuk_elements/elements-typography';
+@import '../govuk_elements/forms';
+@import '../govuk_elements/govuk-template-base';
+@import '../govuk_elements/helpers';
+@import '../govuk_elements/icons';
+@import '../govuk_elements/layout';
+@import '../govuk_elements/lists';
+@import '../govuk_elements/panels';
+@import '../govuk_elements/phase-banner';
+@import '../govuk_elements/tables';
+@import '../govuk_elements/shame';
 
 .phase-banner  {
   @include phase-banner(beta);
@@ -7,7 +28,5 @@
 
 #mapid {
   height: 500px;
-  width: 960px;
   margin: auto;
-
 }
