@@ -6,12 +6,14 @@ RUN apt-get install -y postgis
 
 ADD resources /tmp/resources
 
-RUN shp2pgsql -s SRID /tmp/resources/data/Westminster_Parliamentary_Constituencies_December_2015_Full_Extent_Boundaries_in_Great_Britain.shp \
-             > /tmp/resources/data/Westminster_Parliamentary_Constituencies_December_2015_Full_Extent_Boundaries_in_Great_Britain.sql
+RUN sh /tmp/resources/scripts/setup-postgis.sh
 
+USER postgres
 
+RUN /etc/init.d/postgresql start && \
+    shp2pgsql -s SRID /tmp/resources/data/Westminster_Parliamentary_Constituencies_December_2015_Full_Extent_Boundaries_in_Great_Britain.shp \
+        | psql -d gis > /tmp/import1.log 2>/tmp/import1.err
 
-CMD /tmp/resources/scripts/start-postgis.sh
+RUN /etc/init.d/postgresql stop
 
-
-
+CMD /usr/lib/postgresql/9.5/bin/postgres -D /var/lib/postgresql/9.5/main -c config_file=/etc/postgresql/9.5/main/postgresql.conf
