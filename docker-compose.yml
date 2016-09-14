@@ -1,0 +1,12 @@
+version: '2'
+services:
+  geoserver:
+    build: docker-geoserver/
+    ports:
+     - "8080:8080"
+    depends_on:
+     - postgis
+  postgis:
+    build: docker-postgis/
+    ports:
+    - "5432:5432"
