@@ -7,6 +7,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiYXNobGVpZ2hobyIsImEiOiJjaXN6d3l6MjUwMDYxMnlvM2djajZudG1zIn0.hAdrsz6R7-4Z9OepbVmMOA'
 }).addTo(mymap);
 
+function MapUtils() {
+  this.moveViewPort = function(latitude, longitude, zoom) {
+    mymap.animate = true
+    mymap.setView([latitude, longitude], zoom)
+  }
+}
 /*var marker = L.marker([51.5, -0.09]).addTo(mymap);
 
 var circle = L.circle([51.508, -0.11], 500, {
