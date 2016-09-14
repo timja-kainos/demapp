@@ -11,3 +11,9 @@ libraryDependencies ++= Seq( javaJdbc ,  cache , javaWs )
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
 
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
+
+(checkstyle in Compile) <<= (checkstyle in Compile) triggeredBy (compile in Compile)
+
+(checkstyle in Test) <<= (checkstyle in Test) triggeredBy (compile in Test)
+
+checkstyleSeverityLevel := Some(CheckstyleSeverityLevel.Error)
