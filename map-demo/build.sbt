@@ -14,6 +14,13 @@ unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/
 
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
 
+(checkstyle in Compile) <<= (checkstyle in Compile) triggeredBy (compile in Compile)
+
+(checkstyle in Test) <<= (checkstyle in Test) triggeredBy (compile in Test)
+
+checkstyleSeverityLevel := Some(CheckstyleSeverityLevel.Warning)
+
 dockerExposedPorts in Docker := Seq(9000)
 // run this with: docker run -p 9000:9000 <name>:<version>
+
 

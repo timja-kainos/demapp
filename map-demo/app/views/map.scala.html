@@ -1,10 +1,10 @@
-@(message: String)
+@stylesheetLinks = {
+<link rel="stylesheet" href="https://unpkg.com/leaflet@@1.0.0-rc.3/dist/leaflet.css" />
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+}
 
-@layouts.govuk_template{
-    <head>
-        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/leaflet.css")">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-    </head>
+@layouts.govuk_template(stylesheetLinks){
+
 
     <main id="content" role="main">
         <div class="phase-banner">
