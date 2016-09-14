@@ -14,6 +14,31 @@
             </p>
         </div>
 
+        <h4 class="heading-small">Layer controls</h4>
+        <div>
+            <form>
+                <fieldset>
+
+                    <label class="block-label" for="waste-type-1">
+                        <input id="population" name="layer-toggles" type="checkbox" value="population">
+                        Population
+                    </label>
+                    <label class="block-label" for="waste-type-2">
+                        <input id="religion" name="layer-toggles" type="checkbox" value="religion">
+                        Religion
+                    </label>
+                    <label class="block-label" for="waste-type-3">
+                        <input id="economy" name="layer-toggles" type="checkbox" value="economy">
+                        Economy
+                    </label>
+                    <label class="block-label" for="waste-type-3">
+                        <input id="housing" name="layer-toggles" type="checkbox" value="housing">
+                        Housing
+                    </label>
+                </fieldset>
+            </form>
+        </div>
+
         <div id="mapid"> </div>
 
         <script src="@routes.Assets.at("javascripts/leaflet.js")"></script>
