@@ -1,34 +1,22 @@
 #!/usr/bin/env bash
+# Add any additional setup tasks here
+chmod 600 /etc/ssl/private/ssl-cert-snakeoil.key
 
-SQLDIR="/usr/share/postgresql/9.5/contrib/postgis-2.2/"
-POSTGRES_USER=docker
+# These tasks are run as root
+CONF="/etc/postgresql/9.5/main/postgresql.conf"
 
-# Note the dockerfile must have put the postgis.sql and spatialrefsys.sql scripts into /root/
-# We use template0 since we want t different encoding to template1
-echo "Creating template postgis"
-createdb template_postgis -E UTF8 -T template0
-echo "Enabling template_postgis as a template"
-CMD="UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template_postgis';"
-psql -c \"$CMD\"
-echo "Loading postgis extension"
-psql template_postgis -c 'CREATE EXTENSION postgis;'
+# Restrict subnet to docker-compose private network
+echo "host    all             all             172.18.0.0/16               md5" >> /etc/postgresql/9.5/main/pg_hba.conf
+# Listen on all ip addresses
+echo "listen_addresses = '*'" >> /etc/postgresql/9.5/main/postgresql.conf
+echo "port = 5432" >> /etc/postgresql/9.5/main/postgresql.conf
 
-if [[ ${HSTORE} == "true" ]]
-then
-    echo "Enabling hstore in the template"
-    psql template_postgis -c 'CREATE EXTENSION hstore;'
-fi
-if [[ ${TOPOLOGY} == "true" ]]
-then
-    echo "Enabling topology in the template"
-    psql template_postgis -c 'CREATE EXTENSION postgis_topology;'
-fi
+# Enable ssl
 
-# Needed when importing old dumps using e.g ndims for constraints
-echo "Loading legacy sql"
-psql template_postgis -f $SQLDIR/legacy_minimal.sql
-psql template_postgis -f $SQLDIR/legacy_gist.sql
-# Create a default db called 'gis' that you can use to get up and running quickly
-# It will be owned by the docker db user
-createdb -O $POSTGRES_USER -T template_postgis gis
-
+echo "ssl = true" >> $CONF
+#echo "ssl_ciphers = 'DEFAULT:!LOW:!EXP:!MD5:@STRENGTH' " >> $CONF
+#echo "ssl_renegotiation_limit = 512MB "  >> $CONF
+echo "ssl_cert_file = '/etc/ssl/certs/ssl-cert-snakeoil.pem'" >> $CONF
+echo "ssl_key_file = '/etc/ssl/private/ssl-cert-snakeoil.key'" >> $CONF
+#echo "ssl_ca_file = ''                       # (change requires restart)" >> $CONF
+#echo "ssl_crl_file = ''" >> $CONF
