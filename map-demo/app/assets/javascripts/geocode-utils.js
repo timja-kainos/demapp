@@ -17,10 +17,12 @@ var geocoder = L.mapbox.geocoder('mapbox.places')
 function geocode (searchQuery) {
   geocoder.query(searchQuery, function (err, data) {
     if (!err) {
-      return data
-    } else {
-      console.log(err)
-      return err
-    }
+        var utils = new MapUtils()
+        utils.moveViewPort(data.latlng, 30)
+        return data.latlng
+     } else {
+        console.log(err)
+        return err
+     }
   })
 }
