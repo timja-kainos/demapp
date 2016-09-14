@@ -8,9 +8,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
 function MapUtils() {
-  this.moveViewPort = function(latlng, zoom) {
+  this.moveViewPort = function(latitude, longitude, zoom) {
     mymap.animate = true
-    mymap.setView(latlng, zoom)
+    mymap.setView([latitude, longitude], zoom)
   }
 }
 /*var marker = L.marker([51.5, -0.09]).addTo(mymap);
