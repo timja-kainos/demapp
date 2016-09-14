@@ -6,6 +6,7 @@ RUN apt-get install -y postgis
 
 ADD resources /tmp/resources
 
+RUN sh /tmp/resources/scripts/setup.sh
 RUN sh /tmp/resources/scripts/setup-postgis.sh
 
 USER postgres

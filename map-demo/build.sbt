@@ -1,6 +1,8 @@
 name := "map-demo"
 
-version := "1.0"
+version := "0.0.1-SNAPSHOT"
+
+maintainer := "Tim Jacomb<t.jacomb@kainos.com>"
 
 lazy val `map-demo` = (project in file(".")).enablePlugins(PlayJava)
 
@@ -17,3 +19,8 @@ resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
 (checkstyle in Test) <<= (checkstyle in Test) triggeredBy (compile in Test)
 
 checkstyleSeverityLevel := Some(CheckstyleSeverityLevel.Error)
+
+dockerExposedPorts in Docker := Seq(9000)
+// run this with: docker run -p 9000:9000 <name>:<version>
+
+
