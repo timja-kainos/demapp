@@ -1,4 +1,4 @@
-@(content:Html)
+@(head: Html)(content:Html)
 <!DOCTYPE html>
 <!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
   <head>
@@ -19,7 +19,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="@routes.Assets.at("images/opengraph-image.png")">
-
+    @head
   </head>
 
   <body>
