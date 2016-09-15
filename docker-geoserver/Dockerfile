@@ -48,7 +48,7 @@ WORKDIR $CATALINA_HOME
 # is not available locally in the resources dir
 RUN if [ ! -f /tmp/resources/file-cache/geoserver-${GS_VERSION}-war.zip ]; then \
     wget -c http://downloads.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/geoserver-${GS_VERSION}-war.zip \
-      -O /tmp/resources/file-cache/geoserver--${GS_VERSION}-war.zip; \
+      -O /tmp/resources/file-cache/geoserver-${GS_VERSION}-war.zip; \
     fi; \
     unzip -qq /tmp/resources/file-cache/geoserver-${GS_VERSION}-war.zip -d /tmp/geoserver \
     && unzip -qq /tmp/geoserver/geoserver.war -d $CATALINA_HOME/webapps/geoserver \
