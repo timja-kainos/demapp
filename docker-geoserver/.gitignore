@@ -1,8 +1,11 @@
-resources/*
 !resources/plugins/
 resources/plugins/*
 !resources/plugins/README.txt
 !resources/overlays/
 resources/overlays/*
 !resources/overlays/README.txt
+resources/file-cache/*
+!resources/file-cache/README.md
+!resources/file-cache/build.sh
 .idea
+geoserver.zip

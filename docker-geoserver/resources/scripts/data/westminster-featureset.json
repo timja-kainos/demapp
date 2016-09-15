@@ -1,0 +1,89 @@
+{
+  "featureType": {
+    "name": "westminster_parliamentary_constituencies_december_2015_full_ext",
+    "nativeName": "westminster_parliamentary_constituencies_december_2015_full_ext",
+    "namespace": {
+      "name": "demapp",
+      "href": "http://localhost:8080/geoserver/rest/namespaces/demapp.json"
+    },
+    "title": "westminster_parliamentary_constituencies_december_2015_full_ext",
+    "keywords": {
+      "string": [
+        "westminster_parliamentary_constituencies_december_2015_full_ext",
+        "features"
+      ]
+    },
+    "srs": "EPSG:27700",
+    "nativeBoundingBox": {
+      "minx": 2260.79638671875,
+      "maxx": 659243,
+      "miny": 190.861679077148,
+      "maxy": 1038958.625
+    },
+    "latLonBoundingBox": {
+      "minx": -8.94280597292617,
+      "maxx": 2.5334816294562734,
+      "miny": 49.77001505580024,
+      "maxy": 59.23531350062037,
+      "crs": "GEOGCS[\"WGS84(DD)\", \n  DATUM[\"WGS84\", \n    SPHEROID[\"WGS84\", 6378137.0, 298.257223563]], \n  PRIMEM[\"Greenwich\", 0.0], \n  UNIT[\"degree\", 0.017453292519943295], \n  AXIS[\"Geodetic longitude\", EAST], \n  AXIS[\"Geodetic latitude\", NORTH]]"
+    },
+    "projectionPolicy": "FORCE_DECLARED",
+    "enabled": true,
+    "store": {
+      "@class": "dataStore",
+      "name": "demapp:demapp",
+      "href": "http://localhost:8080/geoserver/rest/workspaces/demapp/datastores/demapp.json"
+    },
+    "maxFeatures": 0,
+    "numDecimals": 0,
+    "overridingServiceSRS": false,
+    "skipNumberMatched": false,
+    "circularArcPresent": false,
+    "attributes": {
+      "attribute": [
+        {
+          "name": "objectid",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "nillable": true,
+          "binding": "java.math.BigDecimal"
+        },
+        {
+          "name": "pcon15cd",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "nillable": true,
+          "binding": "java.lang.String"
+        },
+        {
+          "name": "pcon15nm",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "nillable": true,
+          "binding": "java.lang.String"
+        },
+        {
+          "name": "st_areasha",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "nillable": true,
+          "binding": "java.math.BigDecimal"
+        },
+        {
+          "name": "st_lengths",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "nillable": true,
+          "binding": "java.math.BigDecimal"
+        },
+        {
+          "name": "geom",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "nillable": true,
+          "binding": "com.vividsolutions.jts.geom.MultiPolygon"
+        }
+      ]
+    }
+  }
+}
