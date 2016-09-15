@@ -12,7 +12,8 @@
         <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> 
 */
 
-L.mapbox.accessToken = "ADD_ACCESS_TOKEN_HERE"
+var config = new Config()
+L.mapbox.accessToken = config.mapboxKey()
 
 var geocoder = L.mapbox.geocoder('mapbox.places')
 const ZOOM_LEVEL = 17
