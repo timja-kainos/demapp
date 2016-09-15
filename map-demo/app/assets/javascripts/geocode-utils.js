@@ -19,7 +19,6 @@ var geocoder = L.mapbox.geocoder('mapbox.places')
 const ZOOM_LEVEL = 17
 
 function geocode (searchQuery) {
-
   geocoder.query(searchQuery, function (err, data) {
     if (!err) {
       if (data.hasOwnProperty('latlng')) {

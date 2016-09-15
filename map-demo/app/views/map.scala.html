@@ -1,6 +1,6 @@
 @(message: String)
 
-@layouts.govuk_template{
+@layouts.govuk_template {
     <head>
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/leaflet.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
@@ -13,7 +13,7 @@
                 <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
             </p>
         </div>
-        
+
         <div class="error-summary" id="error" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" hidden="true">
             <h1 class="heading-medium error-summary-heading" id="postcode-error">
             </h1>
@@ -21,36 +21,13 @@
                 Make sure your search is spelled correctly. Try adding a city, county or post code
             </p>
         </div>
-            <h4 class="heading-small">Layer controls</h4>
-            <div>
-                <form>
-                    <fieldset class="inline">
-
-                        <label class="block-label" for="population">
-                            <input id="population" name="layer-toggles" type="checkbox" value="population">
-                            Population
-                        </label>
-                        <label class="block-label" for="religion">
-                            <input id="religion" name="layer-toggles" type="checkbox" value="religion">
-                            Religion
-                        </label>
-                        <label class="block-label" for="economy">
-                            <input id="economy" name="layer-toggles" type="checkbox" value="economy">
-                            Economy
-                        </label>
-                        <label class="block-label" for="housing">
-                            <input id="housing" name="layer-toggles" type="checkbox" value="housing">
-                            Housing
-                        </label>
-                    </fieldset>
-                </form>
-            </div>
 
         <div id="mapid">
             <div class="info legend leaflet-control" id="control">
                 <div id="location-lookup">
                     <input class="form-control" id="location-search" type="text">
-                    <a class="button" id="search-button" href="#" role="button" onclick="geocode(document.getElementById('location-search').value)">Search</a>
+                    <a class="button" id="search-button" href="#" role="button" onclick="geocode(document.getElementById('location-search').value)">
+                        Search</a>
                 </div>
             </div>
         </div>
