@@ -3,7 +3,7 @@
     "standard"
   ],
   "ignore": [
-    "node_modules/"
+    "app/assets/vendor/"
   ],
   "globals": {
     "Config": true,
