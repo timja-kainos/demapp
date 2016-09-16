@@ -1,27 +1,27 @@
-@import "leaflet.css";
+@import "../vendor/stylesheets/leaflet.css";
 
-@import "../govuk_frontend_toolkit/design-patterns/alpha-beta";
-@import "../govuk_frontend_toolkit/design-patterns/breadcrumbs";
-@import "../govuk_frontend_toolkit/design-patterns/buttons";
-@import "../govuk_frontend_toolkit/design-patterns/media-player";
+@import "../vendor/govuk_frontend_toolkit/design-patterns/alpha-beta";
+@import "../vendor/govuk_frontend_toolkit/design-patterns/breadcrumbs";
+@import "../vendor/govuk_frontend_toolkit/design-patterns/buttons";
+@import "../vendor/govuk_frontend_toolkit/design-patterns/media-player";
 
-@import '../govuk_elements/reset';
+@import '../vendor/govuk_elements/reset';
 
-@import '../govuk_elements/breadcrumbs';
-@import '../govuk_elements/buttons';
-@import '../govuk_elements/components';
-@import '../govuk_elements/details';
-@import '../govuk_elements/elements-typography';
-@import '../govuk_elements/forms';
-@import '../govuk_elements/govuk-template-base';
-@import '../govuk_elements/helpers';
-@import '../govuk_elements/icons';
-@import '../govuk_elements/layout';
-@import '../govuk_elements/lists';
-@import '../govuk_elements/panels';
-@import '../govuk_elements/phase-banner';
-@import '../govuk_elements/tables';
-@import '../govuk_elements/shame';
+@import '../vendor/govuk_elements/breadcrumbs';
+@import '../vendor/govuk_elements/buttons';
+@import '../vendor/govuk_elements/components';
+@import '../vendor/govuk_elements/details';
+@import '../vendor/govuk_elements/elements-typography';
+@import '../vendor/govuk_elements/forms';
+@import '../vendor/govuk_elements/govuk-template-base';
+@import '../vendor/govuk_elements/helpers';
+@import '../vendor/govuk_elements/icons';
+@import '../vendor/govuk_elements/layout';
+@import '../vendor/govuk_elements/lists';
+@import '../vendor/govuk_elements/panels';
+@import '../vendor/govuk_elements/phase-banner';
+@import '../vendor/govuk_elements/tables';
+@import '../vendor/govuk_elements/shame';
 
 .phase-banner  {
   @include phase-banner(beta);
@@ -57,7 +57,6 @@
 #search-button {
   padding: 5px;
   width:20%;
-  padding: 5px;
   height:40px;
   font-size: 18px;
 }

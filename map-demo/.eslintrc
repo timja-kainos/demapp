@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "ignore": [
+    "app/assets/vendor/"
+  ],
+  "globals": {
+    "Config": true,
+    "$": true
+  }
+}

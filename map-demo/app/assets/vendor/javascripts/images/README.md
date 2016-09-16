@@ -1,0 +1,1 @@
+The images directory is here because of paths hardcoded in leaflet JS
