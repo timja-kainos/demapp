@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "ignore": [
+    "node_modules/"
+  ],
+  "globals": {
+    "Config": true,
+    "$": true
+  }
+}
