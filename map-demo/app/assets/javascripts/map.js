@@ -10,7 +10,7 @@ var light = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
 })
 
 var map = L.map('mapid', {
-  center: [54.085173,-4.899902],
+  center: [ 54.085173, -4.899902 ],
   zoom: 5,
   layers: [ streets, light ]
 })
