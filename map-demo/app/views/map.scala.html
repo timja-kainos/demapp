@@ -24,17 +24,17 @@
             <div class="info legend leaflet-control" id="control">
                 <div id="location-lookup">
                     <input class="form-control" id="location-search" type="text">
-                    <a class="button" id="search-button" href="#" role="button" onclick="geocode(document.getElementById('location-search').value)">
+                    <a class="button" id="search-button" href="#" role="button">
                         Search</a>
                 </div>
             </div>
         </div>
 
-        <script src="@routes.Assets.at("vendor/javascripts/leaflet.js")"></script>
-        <script src="@routes.Assets.at("javascripts/map.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/jquery-3.1.0.min.js")" type="text/javascript"></script>
-        <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+        <script src="@routes.Assets.at("vendor/javascripts/leaflet.js")"></script>
+        <script src="@routes.Assets.at("vendor/javascripts/mapbox-2.4.0.js")"></script>
         <script src="@routes.Assets.at("javascripts/config.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/map.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/geocode-utils.js")" type="text/javascript"></script>
     </main>
 }

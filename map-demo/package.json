@@ -27,6 +27,6 @@
     ],
     "ignore": [
       "app/assets/vendor/"
-     ]
+    ]
   }
 }

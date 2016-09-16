@@ -9,9 +9,9 @@
  Need to include these files before adding geocode-utils.js
  <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
  */
+var demapp = demapp || {}
 
-var config = new Config()
-L.mapbox.accessToken = config.mapboxKey()
+L.mapbox.accessToken = demapp.config.mapboxKey
 
 var geocoder = L.mapbox.geocoder('mapbox.places')
 const ZOOM_LEVEL = 17
@@ -21,8 +21,7 @@ function geocode (searchQuery) {
     if (!err) {
       if (data.hasOwnProperty('latlng')) {
         $('#error').slideUp('slow')
-        var utils = new MapUtils()
-        utils.moveViewPort(data.latlng[ 0 ], data.latlng[ 1 ], ZOOM_LEVEL)
+        demapp.mapUtils.moveViewPort(data.latlng[ 0 ], data.latlng[ 1 ], ZOOM_LEVEL)
         return data.latlng
       } else {
         postCodeBackup(searchQuery)
@@ -32,13 +31,18 @@ function geocode (searchQuery) {
     }
   })
 }
+
+document.getElementById('search-button')
+  .addEventListener('click', function () {
+    return geocode(document.getElementById('location-search').value)
+  })
+
 function postCodeBackup (searchQuery) {
   $.ajax({
     url: 'https://api.postcodes.io/postcodes/' + searchQuery,
     success: function (data) {
       $('#error').slideUp('slow')
-      var utils = new MapUtils()
-      utils.moveViewPort(data.result.latitude, data.result.longitude, ZOOM_LEVEL)
+      demapp.mapUtils.moveViewPort(data.result.latitude, data.result.longitude, ZOOM_LEVEL)
     },
     error: function (err) {
       console.log('Postcode Not Found, error was: ' + err.message)
