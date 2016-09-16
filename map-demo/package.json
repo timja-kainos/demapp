@@ -1,0 +1,32 @@
+{
+  "name": "map-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "echo 'This is not used' && return 1",
+  "scripts": {
+    "test": "node_modules/standard/bin/cmd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timja-kainos/demapp.git"
+  },
+  "author": "Tim Jacomb",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/timja-kainos/demapp/issues"
+  },
+  "homepage": "https://github.com/timja-kainos/demapp#readme",
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "standard": "^8.0.0"
+  },
+  "standard": {
+    "globals": [
+      "Config",
+      "$"
+    ],
+    "ignore": [
+      "app/assets/vendor/"
+     ]
+  }
+}
