@@ -6,7 +6,6 @@
 @import "../vendor/govuk_frontend_toolkit/design-patterns/media-player";
 
 @import '../vendor/govuk_elements/reset';
-
 @import '../vendor/govuk_elements/breadcrumbs';
 @import '../vendor/govuk_elements/buttons';
 @import '../vendor/govuk_elements/components';
@@ -28,9 +27,25 @@
   margin: auto;
 }
 
+#content {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+html, body, #content {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 #mapid {
-  height: 500px;
-  padding: 10px;
+  height: 100%;
+}
+
+#global-header-bar {
+  max-width: 100%;
+  width: 100%;
   margin: auto;
 }
 
