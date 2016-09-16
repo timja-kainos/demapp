@@ -1,6 +1,5 @@
 'use strict'
 /* global L */
-
 var streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXNobGVpZ2hobyIsImEiOiJjaXN6d3l6MjUwMDYxMnlvM2djajZudG1zIn0.hAdrsz6R7-4Z9OepbVmMOA', {
   id: 'ashleighho.1ccd1a7b',
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
@@ -61,4 +60,3 @@ function MapUtils () {
 }
 
 L.control.layers(baseMaps, layerToggles, { collapsed: false }).addTo(map)
-
