@@ -1,21 +1,5 @@
 'use strict'
 /* global L */
-
-var mymap = L.map('mapid').setView([ 54.085173, -4.899902 ], 5)
-
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-  maxZoom: 18,
-  id: 'ashleighho.1ccd1a7b',
-  accessToken: 'pk.eyJ1IjoiYXNobGVpZ2hobyIsImEiOiJjaXN6d3l6MjUwMDYxMnlvM2djajZudG1zIn0.hAdrsz6R7-4Z9OepbVmMOA'
-}).addTo(mymap)
-
-function MapUtils () {
-  this.moveViewPort = function (latitude, longitude, zoom) {
-    mymap.animate = true
-    mymap.setView([ latitude, longitude ], zoom)
-  }
-}
 var streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXNobGVpZ2hobyIsImEiOiJjaXN6d3l6MjUwMDYxMnlvM2djajZudG1zIn0.hAdrsz6R7-4Z9OepbVmMOA', {
   id: 'ashleighho.1ccd1a7b',
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
@@ -66,6 +50,13 @@ var layerToggles = {
   'Religion': religion,
   'Population': population,
   'Economy': economy
+}
+
+function MapUtils () {
+  this.moveViewPort = function (latitude, longitude, zoom) {
+    map.animate = true
+    map.setView([ latitude, longitude ], zoom)
+  }
 }
 
 L.control.layers(baseMaps, layerToggles, { collapsed: false }).addTo(map)
