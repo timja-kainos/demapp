@@ -15,5 +15,3 @@ psql -d gis -f load.sql
 psql -d gis -c "\copy postcode_lookup FROM '../data/National_Statistics_Postcode_Lookup_August_2016_Centroids.csv' DELIMITER ',' CSV"
 
 psql -d gis -c "\copy population FROM '../data/population.csv' DELIMITER ',' CSV"
-
-
